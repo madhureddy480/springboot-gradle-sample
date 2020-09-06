@@ -44,7 +44,14 @@ dependencies {
 	compile 'org.springframework.boot:spring-boot-starter-web:1.5.7.RELEASE'
 	compile 'org.springframework.boot:spring-boot-starter-actuator:1.5.9.RELEASE'	
 	// https://mvnrepository.com/artifact/commons-logging/commons-logging
-	compile group: 'commons-logging', name: 'commons-logging', version: '1.2'    
+	compile group: 'commons-logging', name: 'commons-logging', version: '1.2'   
+	// https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui
+	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.0.2'
+	// https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-gradle-plugin
+	//compile group: 'io.swagger.core.v3', name: 'swagger-gradle-plugin', version: '2.0.5'
+	// https://mvnrepository.com/artifact/io.springfox/springfox-swagger2
+	compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.0.2'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator' 
 }
 
 bootRun {
