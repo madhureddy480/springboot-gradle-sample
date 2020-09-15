@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc" 
+    xmlns:util="http://www.springframework.org/schema/util" 
+    xmlns:p="http://www.springframework.org/schema/p" 
+    
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd ">
+    
+	<context:annotation-config/> 
+
+	<mvc:cors>
+		<mvc:mapping path="/**"
+			allowed-origins="*"
+			allowed-methods="*"
+			allowed-headers="*"
+			allow-credentials="true"
+			max-age="3600" />
+	</mvc:cors>
+
+	<context:property-placeholder location="classpath*:application.properties" ignore-unresolvable = "true"/>
+<!-- Keep this commented..  <context:property-placeholder location="classpath*:#{SystemEnvironment['ENV']?:'sandbox'}/file.properties"/> -->
+	
+	<!-- Uncomment.. <import resource = "classpath:database/pool-config.xml"/>
+    <import resource = "classpath:database/connect-config.xml"/> -->
+
+</beans> 
